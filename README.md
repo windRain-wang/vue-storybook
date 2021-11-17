@@ -1,24 +1,32 @@
-# vue-storybook
+# 创建 vue 工程
+`vue create vue-storybook`
 
-## Project setup
-```
-npm install
-```
+# 初始化 storybook 
+`npx sb init`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# 安装 `tailwindcss` 
+`npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7`
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+# 配置 postcss.config.js
+```javascript
+export default {
+  plugins: [
+    require("tailwindcss")
+  ]
+}
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 自动配置 tailwindcss
+`npx tailwindcss init`
+
+# 在 `src/main.js` 引入 tailwindcss 文件
+```javascript
+import "tailwindcss/tailwind.css";
+```
+
+# 在 `.storybok/preview.js`  引入 tailwindcss 文件
+```javascript
+import "tailwindcss/tailwind.css";
+```
+
+> vue/cli 工程不用引入 postcss-loader
